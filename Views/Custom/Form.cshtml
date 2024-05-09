@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer ViewLocalizer
+@inject IStringLocalizer<HerhalingASPdotnetCore.Models.User> Localizer
+@model HerhalingASPdotnetCore.Models.User
+@{
+    Layout = "_CustomLayout";
+}
+
+<form asp-controller="Custom" asp-action="Form" asp-antiforgery="true">
+    <label for="Name">@Localizer["Name"]</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br>
+    <label asp-for="Email">Email:</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+    <br>
+    <label asp-for="Message">Message:</label>
+    @Html.TextAreaFor(model => model.Message)
+    <span asp-validation-for="Message"></span>
+    <br>
+    <input type="submit" value="Submit" />
+</form>
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

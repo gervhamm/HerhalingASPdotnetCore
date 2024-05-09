@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace HerhalingASPdotnetCore.Controllers
 {
+    //TODO: welkom pagina beschikbaar in hte Nederland, Frans en Engels (browser afhankelijk)
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
