@@ -4,7 +4,6 @@ using System.Diagnostics;
 
 namespace HerhalingASPdotnetCore.Controllers
 {
-    //TODO: welkom pagina beschikbaar in hte Nederland, Frans en Engels (browser afhankelijk)
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -20,6 +19,14 @@ namespace HerhalingASPdotnetCore.Controllers
         }
 
         public IActionResult LoremIpsum()
+        {
+            return View();
+        }
+        /// <summary>
+        /// SignalR view
+        /// </summary>
+        /// <returns>SignalR view</returns>
+        public IActionResult SignalR()
         {
             return View();
         }

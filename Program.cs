@@ -1,6 +1,7 @@
 using HerhalingASPdotnetCore.Configuration;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Globalization;
+using HerhalingASPdotnetCore.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,11 @@ builder.Services.AddRequestLocalization(options =>
 
     options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
 });
+
+///<summary>
+///Add the SignalR service to the project
+///</summary>
+builder.Services.AddSignalR();
 
 builder.Services.Configure<CustomConfiguration>(builder.Configuration.GetSection("Custom"));
 
@@ -50,6 +56,11 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+///<summary>
+///Map the ChatHub to the /chatHub endpoint
+///</summary>   
+app.MapHub<ChatHub>("/chatHub");
+
 app.Run();
 
 /* TODO: OPTIONEEL - BONUS PUNTEN
@@ -59,3 +70,7 @@ Volgende onderdeel is volledig optioneel, en kan worden erbijgenomen om bonus pu
     Probeer zelfstandig de SignalR library van Microsoft te integreren in je applicatie en zorg dat je door op een knop te drukken bij elke gebruiker een boodschap tevoorschijn laat komen.
     Documenteer (via ///) de verschillende stappen en leg uit hoe je de integratie hebt opgezet
 */
+
+///<summary>
+///Add SignalR to the project
+///Install 
