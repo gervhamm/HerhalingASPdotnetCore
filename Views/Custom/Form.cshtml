@@ -6,22 +6,30 @@
 @{
     Layout = "_CustomLayout";
 }
+<div class="text-center">
+    <form asp-controller="Custom" asp-action="Form" asp-antiforgery="true">
+        <label asp-for="Name"></label>
+        <input id="userInput" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+        <br>
+        <label asp-for="Email"></label>
+        <input id="emailInput" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+        <br>
+        <label asp-for="Message"></label>
+        @Html.TextAreaFor(model => model.Message, new { @id = "messageInput"})
+        <span asp-validation-for="Message"></span>
+        <br>
+        <input type="submit" id="sendButton" value=@ViewLocalizer["submit"] />
+    </form>
 
-<form asp-controller="Custom" asp-action="Form" asp-antiforgery="true">
-    <label asp-for="Name"></label>
-    <input asp-for="Name" />
-    <span asp-validation-for="Name"></span>
+    <hr />
     <br>
-    <label asp-for="Email"></label>
-    <input asp-for="Email" />
-    <span asp-validation-for="Email"></span>
+    <ul id="messagesList"></ul>
     <br>
-    <label asp-for="Message"></label>
-    @Html.TextAreaFor(model => model.Message)
-    <span asp-validation-for="Message"></span>
-    <br>
-    <input type="submit" value=@ViewLocalizer["submit"] />
-</form>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+</div>
 @{
     await Html.RenderPartialAsync("_ValidationScriptsPartial");
 }

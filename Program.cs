@@ -72,5 +72,15 @@ Volgende onderdeel is volledig optioneel, en kan worden erbijgenomen om bonus pu
 */
 
 ///<summary>
-///Add SignalR to the project
-///Install 
+///Adding SignalR to the project
+///Mostly following the steps from the Microsoft documentation
+///https://learn.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-8.0&tabs=visual-studio
+///Step 1: Add the client library @microsoft/signalr@latest
+///Step 2: Create the ChatHub class in the Hubs folder
+///Step 3: Add the SendMessage method to the ChatHub class
+///Step 4: Add the SignalR service to the project
+///Step 5: Map the ChatHub to the /chatHub endpoint
+///Step 6: Add the SignalR client code to a new SignalR view
+///Step 7: Add the javascript code to the SignalR under js/chat.js
+///Step 8: Use the same chat.js functions in the Form view.
+///</summary>
