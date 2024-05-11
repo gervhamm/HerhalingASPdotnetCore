@@ -1,10 +1,16 @@
 using HerhalingASPdotnetCore.Configuration;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews().AddViewLocalization(options => options.ResourcesPath="Resources");
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization(options => options.ResourcesPath="Resources")
+    .AddDataAnnotationsLocalization(/*options => {
+        options.DataAnnotationLocalizerProvider = (type, factory) =>
+            factory.Create(typeof(HerhalingASPdotnetCore.Resources.Models.User));
+    }*/);
 
 builder.Services.AddRequestLocalization(options =>
 {

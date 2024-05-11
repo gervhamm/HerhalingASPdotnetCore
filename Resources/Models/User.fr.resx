@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Name" xml:space="preserve">
-    <value>Naam</value>
+  <data name="Email" xml:space="preserve">
+    <value>Adresse e-mail</value>
   </data>
-  <data name="submit" xml:space="preserve">
-    <value>verzend</value>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Only letters and spaces allowed" xml:space="preserve">
+    <value>Only letters and spaces allowed in french</value>
+  </data>
+  <data name="Too short or too long" xml:space="preserve">
+    <value>Trop court ou trop long</value>
+  </data>
+  <data name="{0} Required" xml:space="preserve">
+    <value>{0} Requis</value>
   </data>
 </root>

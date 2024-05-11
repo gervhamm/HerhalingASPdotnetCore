@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Name" xml:space="preserve">
-    <value>Naam</value>
+  <data name="We are in development" xml:space="preserve">
+    <value>Nous sommes en development!</value>
   </data>
-  <data name="submit" xml:space="preserve">
-    <value>verzend</value>
+  <data name="We are in production" xml:space="preserve">
+    <value>Nous sommes en production!</value>
+  </data>
+  <data name="Welcome to the homepage" xml:space="preserve">
+    <value>Bienvenue!</value>
   </data>
 </root>

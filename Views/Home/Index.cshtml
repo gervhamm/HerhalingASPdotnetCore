@@ -1,15 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer ViewLocalizer
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">@ViewLocalizer["Welcome to the homepage"]</h1>
+    <br>
     <environment include="Production">
-        <p> This is a production message</p>
+        <p>@ViewLocalizer["We are in production"]</p>
     </environment>
     <environment exclude="Production">
-        <p> This is a development message</p>
+        <p>@ViewLocalizer["We are in development"]</p>
     </environment>
-    <lorem></lorem>
 </div>

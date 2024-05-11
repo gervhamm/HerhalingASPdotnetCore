@@ -8,19 +8,19 @@
 }
 
 <form asp-controller="Custom" asp-action="Form" asp-antiforgery="true">
-    <label for="Name">@Localizer["Name"]</label>
+    <label asp-for="Name"></label>
     <input asp-for="Name" />
     <span asp-validation-for="Name"></span>
     <br>
-    <label asp-for="Email">Email:</label>
+    <label asp-for="Email"></label>
     <input asp-for="Email" />
     <span asp-validation-for="Email"></span>
     <br>
-    <label asp-for="Message">Message:</label>
+    <label asp-for="Message"></label>
     @Html.TextAreaFor(model => model.Message)
     <span asp-validation-for="Message"></span>
     <br>
-    <input type="submit" value="Submit" />
+    <input type="submit" value=@ViewLocalizer["submit"] />
 </form>
 @{
     await Html.RenderPartialAsync("_ValidationScriptsPartial");

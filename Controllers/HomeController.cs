@@ -19,7 +19,7 @@ namespace HerhalingASPdotnetCore.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult LoremIpsum()
         {
             return View();
         }
